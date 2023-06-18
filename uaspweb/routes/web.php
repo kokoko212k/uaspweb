@@ -30,6 +30,10 @@ Route::get('/register', function () {
     return view('register');
 });
 
+Route::get('/landingpage', function () {
+    return view('landingpage');
+});
+
 
 Route::get('/', [ArtikelController::class, 'show'])->name('artikel.show');
 Route::post('/add_process', [ArtikelController::class, 'add_process']);
