@@ -41,3 +41,7 @@ Route::get('/admin',  [ArtikelController::class, 'show_by_admin']) -> name('show
 Route::get('/edit/{id}', [ArtikelController::class, 'edit']);
 Route::post('/edit_process', [ArtikelController::class, 'edit_process']);
 Route::get('/delete/{id}', [ArtikelController::class, 'delete']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
