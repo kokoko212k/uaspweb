@@ -26,3 +26,7 @@
     </center>
 </div>
 @endsection
+
+<div>
+    kolom komentar
+</div>

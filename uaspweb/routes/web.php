@@ -46,7 +46,12 @@ Route::get('/admin',  [ArtikelController::class, 'show_by_admin']) -> name('show
 Route::get('/edit/{id}', [ArtikelController::class, 'edit']);
 Route::post('/edit_process', [ArtikelController::class, 'edit_process']);
 Route::get('/delete/{id}', [ArtikelController::class, 'delete']);
+Route::get('/', [ArtikelController::class, 'index']);
+Route::get('/komentar/{category_slug}', [ArtikelController::class, 'viewCategorySlug'])('viewCategorySlug');
+Route::get('/komentar/{category_slug}/{post_slug}', [ArtikelController::class, 'viewPost'])->name('viewPost');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
