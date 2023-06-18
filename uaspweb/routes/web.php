@@ -22,6 +22,10 @@ Route::get('/add', function () {
     return view('add');
 });
 
+Route::get('/', function () {
+    return view('landingpage');
+});
+
 Route::get('/login', function () {
     return view('login');
 });
@@ -30,12 +34,7 @@ Route::get('/register', function () {
     return view('register');
 });
 
-Route::get('/landingpage', function () {
-    return view('landingpage');
-});
-
-
-Route::get('/', [ArtikelController::class, 'show'])->name('artikel.show');
+Route::get('/artikel', [ArtikelController::class, 'show'])->name('artikel.show');
 Route::post('/add_process', [ArtikelController::class, 'add_process']);
 Route::get('/detail/{id}', [ArtikelController::class, 'detail']);
 Route::get('/admin',  [ArtikelController::class, 'show_by_admin']) -> name('show.admin');
